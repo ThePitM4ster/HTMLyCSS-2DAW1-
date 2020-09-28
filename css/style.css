@@ -1,0 +1,84 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+*/
+/*Inicializamos los valores principales de la página para que no haya problemas
+según el navegador o lo que sea*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*box-sizing se utiliza para indicar si los hijos del contenedor pueden ser más grande
+    que el padre(box-sizing: content-box) o que se haga todo más pequeño en caso de que
+    no quepan para que no se salga del padre
+    https://www.youtube.com/watch?v=Vx854s9YE78*/
+}
+body{
+    font-family: "Lato","sans-serif";
+    font-weight: 400px;
+    font-size: 16px;
+    line-height: 1,7;
+    color: #777;
+    padding:30px;
+}
+.header{
+    height: 95vh;
+        /*vh es lo que quieres que ocupe en la pantalla, ajustándose automáticamente a distintos
+    tamaños de la pantañlla
+    https://www.youtube.com/watch?v=_3FpdC_hLHA*/
+    background-image:linear-gradient(to right bottom,rgba(126, 213, 111, 0.8),rgb(40, 180, 133,0.8)),url(../img/hero.jpg);
+    /*linear-gradient es que los colores vayan cogiendo otra tonalidad y depende de la
+    disposición que hayas puesto, en este caso en diagona.l*/
+    background-position:top;
+    /*background-position:top; sirve para que, cuando la imagen no quepa en la pantalla 
+    ,la imagen se posicione de la manera en la que lo hayamos puesto.*/
+    clip-path: polygon(0 0,100% 0 ,100% 75vh,0 100%);
+    /*clip-path sirve para recortar la imagen, en este caso hacemos un polígono indicando
+    los 4 vertices, arriba de D-I y abajo de I-D. Las coordenada se indican (x,y)*/
+    position: relative;
+    /*position sirve para indicar la disposición que van a tomar los elementos, fixed sirve
+    para decir que los elemento siempre van a ocupar una sección de la página y no se va a
+    mover de ese sítio.
+    position relative sirve para posicionar un elemento de manera no fija, en caso del absoluto este
+    busca el anterior posicionamiento relativo y se posiciona según el relativo
+    https://www.youtube.com/watch?v=BVIdzytAtkg*/
+}
+.logo-box{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.logo{
+    height: 35px;
+}
+.text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /*transform: sirve para manipular un elemento desde su última posición
+    https://www.youtube.com/watch?v=ypwVbSAAJ68*/
+    text-align: center;
+}
+.heading-primary{
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 60px;
+}
+.heading-primary-main{
+    display: block;
+    font-size:60px;
+    font-weight: 700px;
+    letter-spacing: 35px;
+    /*letter-spacing: sirve para dejar espacios entre las letras*/
+}
+.heading-primary-sub{
+    display: block;
+    font-size: 20px;
+    font-weight: 40px;
+    letter-spacing: 17.50;
+    
+}
