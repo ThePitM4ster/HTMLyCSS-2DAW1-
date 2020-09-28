@@ -20,7 +20,7 @@ body{
     font-family: "Lato","sans-serif";
     font-weight: 400px;
     font-size: 16px;
-    line-height: 1,7;
+    line-height: 1,7px;
     color: #777;
     padding:30px;
 }
@@ -45,6 +45,7 @@ body{
     position relative sirve para posicionar un elemento de manera no fija, en caso del absoluto este
     busca el anterior posicionamiento relativo y se posiciona según el relativo
     https://www.youtube.com/watch?v=BVIdzytAtkg*/
+    background-size: cover;
 }
 .logo-box{
     position: absolute;
@@ -65,7 +66,7 @@ body{
 }
 .heading-primary{
     text-transform: uppercase;
-    color: #777;
+    color: #fff;
     margin-bottom: 60px;
 }
 .heading-primary-main{
@@ -74,11 +75,67 @@ body{
     font-weight: 700px;
     letter-spacing: 35px;
     /*letter-spacing: sirve para dejar espacios entre las letras*/
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+
 }
 .heading-primary-sub{
     display: block;
     font-size: 20px;
     font-weight: 40px;
-    letter-spacing: 17.50;
+    letter-spacing: 17.50px;
+    animation: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
     
+}
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    50%{
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    50%{
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.btn:link,
+.btn:visited{
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;;
+    transition: all 0.2s;
+}
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgb(0, 0, 0,0.2);
+    color: black;
+}
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0px 2px 20px rgb(0, 0, 0,0.2);
+}
+.btn-white{
+    background-color: #fff;
+    color: #777;
 }
